@@ -1,0 +1,48 @@
+<form [formGroup]="dateForm" (ngSubmit)="calculateDifference()">
+  <div class="container">
+    <h1>Diferença de Datas</h1>
+    <div class="inputs">
+      <mat-form-field appearance="fill">
+        <mat-label>Data Inicial</mat-label>
+        <input matInput [matDatepicker]="startPicker" formControlName="startDate" placeholder="Escolha uma data">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data Final</mat-label>
+        <input matInput [matDatepicker]="endPicker" formControlName="endDate" placeholder="Escolha uma data">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">Calcular</button>
+        <button mat-raised-button color="accent" type="button" (click)="clearForm()">Limpar</button>
+      </div>
+    </div>
+    
+    <div *ngIf="difference">
+      <h2>Resultado</h2>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="difference">
+          <th mat-header-cell *matHeaderCellDef> Diferença </th>
+          <td mat-cell *matCellDef="let element"> {{element.difference}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef> Valor </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <footer class="footer">
+      Feito por João Lucas Moreira 
+    </footer>
+  </div>
+</form>
