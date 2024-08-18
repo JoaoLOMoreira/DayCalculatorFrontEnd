@@ -1,27 +1,59 @@
-# DayCalculatorFrontend
+# Calculadora de Diferença de Datas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
+Este projeto é uma demonstração de conceitos básicos na implementação de uma aplicação web usando Angular, TypeScript e Angular Material. O objetivo principal é mostrar como criar uma interface de usuário interativa e funcional com essas tecnologias.
 
-## Development server
+A aplicação permite ao usuário calcular a diferença entre duas datas, mostrando o resultado em dias, meses, anos e horas. O projeto utiliza Angular para a estrutura do front-end e Angular Material para os componentes de UI, oferecendo uma experiência de usuário moderna e responsiva.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
 
-## Code scaffolding
+- **Angular**: Framework para construção do front-end.
+- **TypeScript**: Linguagem de programação que adiciona tipagem estática ao JavaScript.
+- **Angular Material**: Biblioteca de componentes UI para Angular.
+- **NGXS**: Framework de gerenciamentos de estados(Será usado em implementações futuras)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Planejamento Futuro
 
-## Build
+No futuro, será implementado um back-end para separar a camada de processamento do front-end. Além disso projeto será publicado no Azure.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Observações
 
-## Running unit tests
+Os conceitos e a implementação presentes neste projeto são exemplos básicos e podem não refletir a viabilidade ou detalhes corretos para uma aplicação em produção. O foco está em demonstrar o uso fundamental das tecnologias envolvidas.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribuições
 
-## Running end-to-end tests
+Contribuições são bem-vindas! Se você tem sugestões para melhorias ou deseja corrigir algum problema, fique à vontade para abrir uma issue ou fazer um pull request.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contato
+Para mais informações ou para entrar em contato, você pode me encontrar no Instagram: @joaomoreira.exe.
 
-## Further help
+## Instruções para Execução:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone o repositório:
+
+```bash
+   git clone https://github.com/seu-usuario/calculadora-diferenca-datas.git
+```
+
+2. Navegue até o diretório do projeto:
+
+```bash
+  cd calculadora-diferenca-datas
+```
+
+3. Instale as dependências:
+
+```bash
+  npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```bash
+    ng serve
+```
+
+5. Abra o navegador e acesse:
+
+```bash
+   http://localhost:4200
+```
