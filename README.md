@@ -19,8 +19,14 @@ No futuro, será implementado um back-end para separar a camada de processamento
 
 Os conceitos e a implementação presentes neste projeto são exemplos básicos e podem não refletir a viabilidade ou detalhes corretos para uma aplicação em produção. O foco está em demonstrar o uso fundamental das tecnologias envolvidas.
 
-## Instruções para Execução:
+## Contribuições
 
+Contribuições são bem-vindas! Se você tem sugestões para melhorias ou deseja corrigir algum problema, fique à vontade para abrir uma issue ou fazer um pull request.
+
+## Contato
+Para mais informações ou para entrar em contato, você pode me encontrar no Instagram: @joaomoreira.exe.
+
+## Instruções para Execução:
 
 1. Clone o repositório:
 
