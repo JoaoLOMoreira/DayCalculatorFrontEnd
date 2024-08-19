@@ -1,6 +1,11 @@
 # Calculadora de Diferença de Datas
 
+Este projeto tem como objetivo servir como a camada de Interface de usuario para o projeto de backend [DayCalculatorFrontEnd](https://github.com/JoaoLOMoreira/DayCalculatorBackEnd) (Ainda em desenvolvimento!).
+
+## Visão Geral
+
 Este projeto é uma demonstração de conceitos básicos na implementação de uma aplicação web usando Angular, TypeScript e Angular Material. O objetivo principal é mostrar como criar uma interface de usuário interativa e funcional com essas tecnologias.
+
 
 A aplicação permite ao usuário calcular a diferença entre duas datas, mostrando o resultado em dias, meses, anos e horas. O projeto utiliza Angular para a estrutura do front-end e Angular Material para os componentes de UI, oferecendo uma experiência de usuário moderna e responsiva.
 
@@ -17,7 +22,7 @@ No futuro, será implementado um back-end para separar a camada de processamento
 
 ## Observações
 
-Os conceitos e a implementação presentes neste projeto são exemplos básicos e podem não refletir a viabilidade ou detalhes corretos para uma aplicação em produção. O foco está em demonstrar o uso fundamental das tecnologias envolvidas.
+Os conceitos e a implementação presentes neste projeto são exemplos básicos e podem não refletir a viabilidade ou detalhes corretos para uma aplicação em produção. O foco está em demonstrar o uso fundamental das tecnologias envolvidas. Para uma aplicação em produção, recomenda-se uma análise detalhada dos requisitos e a aplicação de práticas de desenvolvimento robustas.
 
 ## Contribuições
 
