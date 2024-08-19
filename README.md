@@ -18,7 +18,7 @@ A aplicação permite ao usuário calcular a diferença entre duas datas, mostra
 
 ## Planejamento Futuro
 
-No futuro, será implementado um back-end para separar a camada de processamento do front-end. Além disso projeto será publicado no Azure.
+No futuro, projeto será publicado no Azure.
 
 ## Observações
 
