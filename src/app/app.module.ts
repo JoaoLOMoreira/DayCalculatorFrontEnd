@@ -12,6 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { DaysCalculatorPresenter } from './Modules/days-calculator/Providers/days-calculator.presenter';
+import { DaysCalculatorService } from './Modules/days-calculator/Providers/days-calculator.service';
+import { DaysCalculatorState } from './Modules/days-calculator/Store/days-calculator.state';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -28,14 +32,16 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatTableModule,
+    HttpClientModule,
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
+    NgxsModule.forFeature([DaysCalculatorState])
   ],
-  providers: [],
+  providers: [DaysCalculatorPresenter, DaysCalculatorService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material/table';
+import { DaysCalculatorPresenter } from './Providers/days-calculator.presenter';
+import { Observable } from 'rxjs';
+import { DateDiff } from 'src/app/Shared/Entities/DateDiff.entity';
+
 
 @Component({
   selector: 'app-days-calculator',
@@ -8,12 +11,16 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./days-calculator.component.scss']
 })
 export class DaysCalculatorComponent implements OnInit {
+  dateDiff$ = this.presenter.dateDiff$;
+  dateDiff: DateDiff | null = null; 
   dateForm: FormGroup;
-  difference: { days: number, months: number, years: number, hours: number } | null = null;
-  displayedColumns: string[] = ['difference', 'value'];
-  dataSource = new MatTableDataSource<any>([]);
+  displayedColumns: string[] = ['label', 'value'];
 
-  constructor(private fb: FormBuilder) {}
+
+  constructor(
+    private fb: FormBuilder,
+    private presenter: DaysCalculatorPresenter
+  ) {}
 
   ngOnInit(): void {
     this.dateForm = this.fb.group({
@@ -26,49 +33,19 @@ export class DaysCalculatorComponent implements OnInit {
     const startDate = this.dateForm.get('startDate')?.value;
     const endDate = this.dateForm.get('endDate')?.value;
 
-    if (startDate && endDate) {
-      const start = new Date(startDate);
-      const end = new Date(endDate);
+    const startDateString: string = startDate ? startDate.toISOString().split('T')[0] : '';
+    const endDateString: string = endDate ? endDate.toISOString().split('T')[0] : '';
 
-      if (start > end) {
-        alert('A data inicial deve ser anterior à data final.');
-        return;
-      }
+    this.presenter.get(startDateString, endDateString);
 
-      const diffTime = end.getTime() - start.getTime();
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      const diffMonths = this.calculateMonths(start, end);
-      const diffYears = this.calculateYears(start, end);
-      const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
-
-      this.difference = {
-        days: diffDays,
-        months: diffMonths,
-        years: diffYears,
-        hours: diffHours
-      };
-
-      this.dataSource.data = [
-        { difference: 'Dias', value: this.difference.days },
-        { difference: 'Meses', value: this.difference.months },
-        { difference: 'Anos', value: this.difference.years },
-        { difference: 'Horas', value: this.difference.hours }
-      ];
-    }
+    this.dateDiff$.subscribe(data => {
+      this.dateDiff = data;
+      console.log('DateDiff data:', this.dateDiff); 
+    });
   }
 
-  private calculateMonths(start: Date, end: Date): number {
-    const months = (end.getFullYear() - start.getFullYear()) * 12 + end.getMonth() - start.getMonth();
-    return months;
-  }
-
-  private calculateYears(start: Date, end: Date): number {
-    return end.getFullYear() - start.getFullYear();
-  }
-
-  clearForm() {
+  clearForm(): void {
     this.dateForm.reset();
-    this.difference = null;
-    this.dataSource.data = []; 
+    this.dateDiff = null; 
   }
 }
